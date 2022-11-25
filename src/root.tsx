@@ -30,31 +30,33 @@ export default component$(() => {
    */
   const todos = [
     {
-      title: "help",
-      done: false,
-    },
-    {
+      id: 1,
       title: "help1",
       done: false,
     },
-
     {
-      title: "help1",
-      done: false,
-    },
-
-    {
+      id: 2,
       title: "help2",
       done: false,
     },
-
     {
+      id: 3,
       title: "help3",
       done: false,
     },
-
     {
+      id: 4,
       title: "help4",
+      done: false,
+    },
+    {
+      id: 5,
+      title: "help5",
+      done: false,
+    },
+    {
+      id: 6,
+      title: "help6",
       done: false,
     },
   ];
@@ -76,7 +78,7 @@ export default component$(() => {
         <link rel="manifest" href="/manifest.json" />
         <RouterHead />
       </head>
-      <body lang="en" class="bg-yellow-200">
+      <body lang="en" class="bg-yellow-200 flex flex-col h-screen">
         <RouterOutlet />
         <ServiceWorkerRegister />
       </body>
