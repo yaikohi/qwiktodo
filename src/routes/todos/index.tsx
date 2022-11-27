@@ -14,23 +14,31 @@ export default component$(() => {
       <AddTodoCard />
       <section>
         {/* LIST TODOS */}
-        <ul class="flex flex-col gap-2 bg-slate-200 max-w-xs max-h-96 overflow-y-scroll">
+        <ul class="flex flex-col gap-2 bg-slate-50 max-w-md p-8 max-h-[900px] overflow-y-scroll">
           <h2 class="text-xl">Todo list</h2>
           {store.todos &&
             store.todos.slice(0, 10).map((todo: Todo) => (
-              <li class="bg-slate-300 rounded-md p-4">
-                <p>{todo.title}</p>
-                <p>{todo.id}</p>
+              <li class="bg-violet-200 rounded-md p-4">
+                <div class="px-4 my-2 ">
+                  <p class="font-bold">{todo.title}</p>
+                  <p class="italic text-sm">{todo.id}</p>
+                </div>
+                <div class="">
+                  <button
+                    onClick$={() => {
+                      store.todos = store.todos.filter(
+                        (currentTodo) => currentTodo.id !== todo.id
+                      );
+                    }}
+                    class="px-2 py-1 bg-yellow-100 rounded-xl m-1 active:bg-yellow-300 hover:bg-yellow-200"
+                  >
+                    Delete
+                  </button>
 
-                {/* REMOVE TODO */}
-                <button class="px-2 py-1 bg-violet-50 rounded-xl m-1 active:bg-violet-200 hover:bg-violet-100">
-                  Delete
-                </button>
-
-                {/* EDIT TODO */}
-                <button class="px-2 py-1 bg-violet-50 rounded-xl m-1 active:bg-violet-200 hover:bg-violet-100">
-                  Edit
-                </button>
+                  {/* <button class="px-2 py-1 bg-violet-50 rounded-xl m-1 active:bg-violet-200 hover:bg-violet-100">
+                    Edit
+                  </button> */}
+                </div>
               </li>
             ))}
         </ul>
