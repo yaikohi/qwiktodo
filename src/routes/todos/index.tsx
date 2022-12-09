@@ -13,7 +13,6 @@ export default component$(() => {
       <section class="p-4 my-4 rounded-2xl bg-slate-300 max-w-md"></section>
       <AddTodoCard />
       <section>
-        {/* LIST TODOS */}
         <ul class="flex flex-col gap-2 bg-slate-50 max-w-md p-8 max-h-[900px] overflow-y-scroll">
           <h2 class="text-xl">Todo list</h2>
           {store.todos &&

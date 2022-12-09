@@ -2,10 +2,6 @@ import { component$, useContext, useStore } from "@builder.io/qwik";
 import { TodosContext } from "~/store/todos-context";
 import { Todo } from "~/types/todos";
 
-// type TodoCardProps = {
-//   store: ReturnType<typeof useStore<{ todos: Todo[] }>> | null;
-// };
-
 export default component$(() => {
   const todoStore = useStore<Todo>({
     id: 0,
